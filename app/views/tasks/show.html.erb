@@ -1,0 +1,12 @@
+<h1><%= @task.title %></h1>
+<div class = card>
+<p><%= @task.details %></p>
+</div>
+<p><%= @task.completed %></p>
+
+<%= link_to "Back", tasks_path %>
+<%= link_to "Edit task", edit_task_path %>
+<%= link_to "Delete",
+    task_path(@task), #pag da task do task path
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
